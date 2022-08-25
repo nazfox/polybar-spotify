@@ -2,7 +2,8 @@
 
 DIRNAME=$(dirname $0)
 
-PARENT_BAR="center"
+source "${DIRNAME}/spotify_status_vars"
+
 PARENT_BAR_PID=$(pgrep -a "polybar" | grep "$PARENT_BAR" | cut -d" " -f1)
 
 update_hooks() {
@@ -14,8 +15,6 @@ update_hooks() {
         polybar-msg -p "$pid" hook spotify-play-pause $message 1>/dev/null 2>&1
     done
 }
-
-source "${DIRNAME}/spotify_status_vars"
 
 if [[ ! -d $CACHE_DIR ]]; then
     mkdir -p $CACHE_DIR

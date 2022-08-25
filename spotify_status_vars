@@ -10,6 +10,9 @@ PLAYER="spotifyd"
 # See more attributes here: https://github.com/altdesktop/playerctl/#printing-properties-and-metadata
 FORMAT="{{ title }} - {{ artist }}"
 
+# The name of polybar bar which houses the main spotify module and the control modules.
+PARENT_BAR="center"
+
 # The output of playerctl is cached here.
 CACHE_DIR="/tmp/polybar-spotify"
 STATUS_CACHE="${CACHE_DIR}/player_status"
