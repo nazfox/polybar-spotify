@@ -1,0 +1,22 @@
+# Set the source audio player here.
+# Players supporting the MPRIS spec are supported.
+# Examples: spotify, vlc, chrome, mpv and others.
+# Use `playerctld` to always detect the latest player.
+# See more here: https://github.com/altdesktop/playerctl/#selecting-players-to-control
+PLAYER="spotifyd"
+
+# Format of the information displayed
+# Eg. {{ artist }} - {{ album }} - {{ title }}
+# See more attributes here: https://github.com/altdesktop/playerctl/#printing-properties-and-metadata
+FORMAT="{{ title }} - {{ artist }}"
+
+# The output of playerctl is cached here.
+CACHE_DIR="/tmp/polybar-spotify"
+STATUS_CACHE="${CACHE_DIR}/player_status"
+FORMAT_CACHE="${CACHE_DIR}/player_format"
+
+# Set the cache update interval in seconds.
+CACHE_UPDATE_INTERVAL=1
+
+# vim: set filetype=bash
+
