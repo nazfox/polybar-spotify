@@ -12,7 +12,9 @@ update_hooks() {
     local message="$2"
 
     echo "$pids" | while IFS='\n' read pid; do
+        polybar-msg -p "$pid" hook spotify-prev       $message 1>/dev/null 2>&1
         polybar-msg -p "$pid" hook spotify-play-pause $message 1>/dev/null 2>&1
+        polybar-msg -p "$pid" hook spotify-next       $message 1>/dev/null 2>&1
     done
 }
 
@@ -34,11 +36,13 @@ if [ "$1" == "--status" ]; then
     echo "$STATUS"
 else
     if [ "$STATUS" = "Stopped" ]; then
+        update_hooks "$PARENT_BAR_PID" 3
         echo "No music is playing"
     elif [ "$STATUS" = "Paused"  ]; then
         update_hooks "$PARENT_BAR_PID" 2
         cat $FORMAT_CACHE
     elif [ "$STATUS" = "No player is running"  ]; then
+        update_hooks "$PARENT_BAR_PID" 3
         echo "$STATUS"
     else
         update_hooks "$PARENT_BAR_PID" 1
