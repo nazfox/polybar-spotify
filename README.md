@@ -1,7 +1,5 @@
 # polybar-spotify with cache
 
-I modified this [polybar-spotify](https://github.com/PrayagS/polybar-spotify) to cache the output of playerctl. The string scrolls as fast as specified in zscroll.
-
 ![sample](img/sample.gif)
 
 
@@ -44,6 +42,3 @@ hook-2 = echo "%{F#71839b}怜%{F-}"
 initial = 1
 click-left = playerctl next -p playerctld
 ```
-
-See [here](https://github.com/PrayagS/polybar-spotify/blob/master/README.md) for more information.
-

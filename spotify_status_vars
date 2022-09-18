@@ -3,23 +3,22 @@
 # Examples: spotify, vlc, chrome, mpv and others.
 # Use `playerctld` to always detect the latest player.
 # See more here: https://github.com/altdesktop/playerctl/#selecting-players-to-control
-PLAYER="playerctld"
+readonly PLAYER="playerctld"
 
 # Format of the information displayed
 # Eg. {{ artist }} - {{ album }} - {{ title }}
 # See more attributes here: https://github.com/altdesktop/playerctl/#printing-properties-and-metadata
-FORMAT="{{ title }} - {{ artist }}"
+readonly FORMAT="{{ title }} - {{ artist }}"
 
 # The name of polybar bar which houses the main spotify module and the control modules.
-PARENT_BAR="center"
+readonly POLYBAR_NAME="center"
 
 # The output of playerctl is cached here.
-CACHE_DIR="/tmp/polybar-spotify"
-STATUS_CACHE="${CACHE_DIR}/player_status"
-FORMAT_CACHE="${CACHE_DIR}/player_format"
+readonly CACHE_DIR="/tmp/polybar-spotify"
+readonly STATUS_CACHE_FILE="${CACHE_DIR}/player_status"
+readonly FORMAT_CACHE_FILE="${CACHE_DIR}/player_format"
 
 # Set the cache update interval in seconds.
-CACHE_UPDATE_INTERVAL=1
+readonly CACHE_UPDATE_INTERVAL=1
 
 # vim: set filetype=bash
-
