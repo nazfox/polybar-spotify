@@ -48,10 +48,10 @@ zscroll \
   --delay 0.1 \
   --scroll-padding " | " \
   --match-command "${DIRNAME}/get_spotify_status.sh --status" \
-  --match-text STATUS_PLAYING   "--scroll 1 --before-text '阮 '" \
-  --match-text STATUS_PAUSED    "--scroll 0 --before-text '阮 %{F#71839b}' --after-text '%{F-}'" \
-  --match-text STATUS_STOPPED   "--scroll 0 --before-text '%{F#71839b}阮 ' --after-text '%{F-}'" \
-  --match-text STATUS_NO_PLAYER "--scroll 0 --before-text '%{F#71839b}阮 ' --after-text '%{F-}'" \
+  --match-text "${STATUS_PLAYING}"   "--scroll 1 --before-text '阮 '" \
+  --match-text "${STATUS_PAUSED}"    "--scroll 0 --before-text '阮 %{F#71839b}' --after-text '%{F-}'" \
+  --match-text "${STATUS_STOPPED}"   "--scroll 0 --before-text '%{F#71839b}阮 ' --after-text '%{F-}'" \
+  --match-text "${STATUS_NO_PLAYER}" "--scroll 0 --before-text '%{F#71839b}阮 ' --after-text '%{F-}'" \
   --update-check=true "${DIRNAME}/get_spotify_status.sh" &
 
 wait
