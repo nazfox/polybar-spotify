@@ -16,7 +16,7 @@ function update_cache_files() {
   local exit_code=$?
   
   if [[ $exit_code -ne 0 ]]; then
-      status='No player'
+    status='No player'
   fi
   
   echo "${status}" > "${STATUS_CACHE_FILE}.tmp"
@@ -27,15 +27,15 @@ function update_cache_files() {
 }
 
 if [[ ! -d $CACHE_DIR ]]; then
-    mkdir -p "${CACHE_DIR}"
+  mkdir -p "${CACHE_DIR}"
 fi
 
 if [[ ! -f $STATUS_CACHE_FILE ]]; then
-    touch "${STATUS_CACHE_FILE}"
+  touch "${STATUS_CACHE_FILE}"
 fi
 
 if [[ ! -f $FORMAT_CACHE_FILE ]]; then
-    touch "${FORMAT_CACHE_FILE}"
+  touch "${FORMAT_CACHE_FILE}"
 fi
 
 while true; do
