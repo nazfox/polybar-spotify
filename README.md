@@ -1,11 +1,11 @@
-# polybar-spotify with cache
+# polybar-spotify
 
 ![sample](img/sample.gif)
 
 
 ## Setup
 
-Edit `spotify_status_vars` to match your environment.
+Edit `spotify_status_vars`.
 
 Then add the following lines to your polybar configuration `config.ini`.
 
