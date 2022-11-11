@@ -46,6 +46,6 @@ else
     cat "${FORMAT_CACHE_FILE}"
   else
     run_hooks "${POLYBAR_PID}" $HOOK_DISABLED
-    echo "Cannot handle status ${PLAYER_STATUS}"
+    echo "Cannot handle the status '${PLAYER_STATUS}'"
   fi
 fi

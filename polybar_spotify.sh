@@ -12,17 +12,20 @@ readonly STATUS_STOPPED='Stopped'
 readonly STATUS_NO_PLAYER='No player'
 
 function update_cache_files() {
-  local status=$(playerctl --player=$PLAYER status 2>/dev/null)
-  local exit_code=$?
+  local status
+  local exit_code
+
+  status=$(playerctl --player=$PLAYER status 2>/dev/null)
+  exit_code=$?
   
-  if [[ $exit_code -ne 0 ]]; then
-    status='No player'
+  if [[ "${exit_code}" -ne 0 ]]; then
+    status="${STATUS_NO_PLAYER}"
   fi
   
-  echo "${status}" > "${STATUS_CACHE_FILE}.tmp"
+  echo "${status}" >"${STATUS_CACHE_FILE}.tmp"
   mv "${STATUS_CACHE_FILE}.tmp" "${STATUS_CACHE_FILE}"
   
-  playerctl --player=$PLAYER metadata --format "$FORMAT" > "${FORMAT_CACHE_FILE}.tmp" 2>/dev/null
+  playerctl --player=$PLAYER metadata --format "$FORMAT" >"${FORMAT_CACHE_FILE}.tmp" 2>/dev/null
   mv "${FORMAT_CACHE_FILE}.tmp" "${FORMAT_CACHE_FILE}"
 }
 
